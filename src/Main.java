@@ -40,25 +40,12 @@ public class Main {
 
                 char operator = formula_parts[1].charAt(0);
 
-                int result;
-
-                switch (operator) {
-                    case '+':
-                        result = a + b;
-                        break;
-                    case '-':
-                        result = a - b;
-                        break;
-                    case '*':
-                        result = a * b;
-                        break;
-                    case '/':
-                        result = a / b;
-                        break;
-                    default:
-                        result = 0;
-                        break;
-                }
+                int result = switch (operator) {
+                    case '+' -> a + b;
+                    case '-' -> a - b;
+                    case '*' -> a * b;
+                    default -> a / b;
+                };
 
                 if (isRoman) {
                     if (result <= 0) {
@@ -70,7 +57,7 @@ public class Main {
                 }
 
             } else {
-                throw new ScannerException("Оба операнда должны быть в единой системн счисления");
+                throw new ScannerException("Оба операнда должны быть в единой системе счисления");
             }
         }
     }
