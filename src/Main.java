@@ -37,7 +37,7 @@ public class Main {
         }
     }
 
-        static int defineOperator (Integer firstOperand, Integer secondOperand,char operator){
+        private static int defineOperator (Integer firstOperand, Integer secondOperand,char operator){
             return switch (operator) {
                 case '+' -> firstOperand + secondOperand;
                 case '-' -> firstOperand - secondOperand;
